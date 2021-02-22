@@ -1,27 +1,60 @@
-input {
+.image {
    margin: 50px;
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   position: relative;
 
-   // border: 1px solid #ccc;
+   &::before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      position: absolute;
+      right: 0;
+      bottom: 8px;
+      background: #2ecc71;
+      border: 2px solid black;
+
+   }
+
+   img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+
+   }
+}
+
+.messages {
+   margin: 50px;
+   border: 1px solid #9b59b6;
    border-radius: 8px;
-   padding: 8px 18px;
-   width: 300px;
-   height: 40px;
-   transition: all .2s;
-   // text-align: center;
+   width: 400px;
+   height: 200px;
+   background: #fff;
 
-   // blur
-   // branch 
+   position: relative;
 
-   // vertical
-
-   &:focus {
-      // border: 1px solid pink;
-
-
+   &::before,
+   &::after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      border: 1px solid #9b59b6;
+      position: absolute;
+      left: 20px;
+      top: -10px;
+      transform: rotate(45deg);
+      border-radius: 2px;
+      z-index: -1;
    }
 
-   &::placeholder {
-      text-transform: capitalize;
+   &::before {
+      left: 19.5px;
+      top: -8.5px;
+      background: #fff;
+      z-index: 2;
+      border: none;
    }
-
 }
